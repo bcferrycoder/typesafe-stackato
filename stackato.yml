@@ -1,5 +1,4 @@
 name: typesafe
-app-dir: target
 mem: 1024M
 framework:
   type: generic
