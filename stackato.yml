@@ -1,0 +1,14 @@
+name: typesafe
+app-dir: target
+mem: 1024M
+framework:
+  type: generic
+  runtime: java7
+hooks:
+  pre-staging:
+    - curl -O http://downloads.typesafe.com/typesafe-activator/1.0.9/typesafe-activator-1.0.9.zip
+    - unzip typesafe-activator-1.0.9.zip
+env:
+  java_opts: "-Dhttp.port=$PORT -Dhttp.address=0.0.0.0"
+processes:
+  web: activator-1.0.9/activator
